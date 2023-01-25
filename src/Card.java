@@ -1,6 +1,8 @@
 public class Card {
     public static String values = "23456789TJQKA";
     public static String suits = "CDHS";
+    private boolean isPlayer = false;
+
     private char suit;
     private char val;
     private int point;
@@ -35,8 +37,27 @@ public class Card {
             point = 10;     //FACES & 10
         }
     }
-    
-    
+    public Card(int s, int v, boolean player){
+        isPlayer = player;
+        val = values.charAt(v);
+        suit = suits.charAt(s);
+        if(v < 8){
+            point = v + 2;
+        } else if (v == 12) {   //ACE
+            point = 1;
+        } else {
+            point = 10;     //FACES & 10
+        }
+    }
+
+    public void setPlayer(boolean player) {
+        isPlayer = player;
+    }
+
+    public boolean getPlayer(){
+        return isPlayer;
+    }
+
     public String toString(){
         return "" + val + suit;
     }

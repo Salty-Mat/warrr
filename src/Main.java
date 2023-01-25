@@ -6,6 +6,9 @@ public class Main {
 
         deck.shuffle();
 
+        deck.split();
+        deck.battle();
+
         System.out.println(deck.toString());
 
 
