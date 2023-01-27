@@ -16,6 +16,7 @@ public class Deck {
     }
 
     public void shuffle(){
+
         for (int i = 0; i < 52; i++) {
             int rand = (int) (Math.random()*52); //randomizing
             Card temp;
@@ -27,6 +28,25 @@ public class Deck {
 
         }
 
+    }
+
+    // player card
+    // compuet card
+    // player deck
+    // computer deckl
+
+    public Card getPlayerCard(){
+        return warDeck.get(0);
+    }
+    public Card getComputerCard(){
+        return warDeck.get(1);
+    }
+    public ArrayList<Card> getPlayerDeck(){
+        return playerDeck;
+    }
+
+    public ArrayList<Card> getComputerDeck() {
+        return computerDeck;
     }
 
     public void split(){
@@ -50,6 +70,9 @@ public class Deck {
         warDeck.add(computerDeck.get(1));
         computerDeck.remove(1);
 
+    }
+    
+    public void realBattle(){
         if(warDeck.get(0).getPoint() < warDeck.get(1).getPoint()){
             computerDeck.add(warDeck.get(0));
             computerDeck.add(warDeck.get(1));
@@ -65,22 +88,23 @@ public class Deck {
         if(warDeck.get(0).getPoint() == warDeck.get(1).getPoint()){
             playerDeck.add(warDeck.get(0));
             playerDeck.add(warDeck.get(1));
-            System.out.println("PLAYER WON LAMOIA");
+            System.out.println("tie");
         }
 
-
-        //warDeck.clear();
-
+        warDeck.clear();
     }
     
-    public void war(){
-        for (int i = 0; i < 4; i++) {
-            warDeck.add(playerDeck.get(i));
-            playerDeck.remove(i);
-            warDeck.add(computerDeck.get(i));
-            computerDeck.remove(i);
-        }
-//
+    public ArrayList<Card> getWarDeck() {
+        return warDeck;
+    }
+
+//        public void war(){
+//        for (int i = 0; i < 4; i++) {
+//            warDeck.add(playerDeck.get(i));
+//            playerDeck.remove(i);
+//            warDeck.add(computerDeck.get(i));
+//            computerDeck.remove(i);
+//        }
 //        if(warDeck.get(0).getPoint() < warDeck.get(1).getPoint()){
 //            computerDeck.add(warDeck.get(0));
 //            computerDeck.add(warDeck.get(1));
@@ -92,8 +116,8 @@ public class Deck {
 //            playerDeck.add(warDeck.get(1));
 //            System.out.println("PLAYER WON LAMOIA");
 //        }
-
-    }
+//
+//    }
 
 
     public String toString() {
