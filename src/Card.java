@@ -1,6 +1,6 @@
 public class Card {
     public static String values = "23456789TJQKA";
-    public static String suits = "CDHS";
+    public static String suits = "♣⬩♥♠";
     private boolean isPlayer = false;
 
     private char suit;

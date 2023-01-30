@@ -7,6 +7,22 @@ public class Deck {
     //52 card
     ArrayList<Card> allDeck = new ArrayList<Card>();
 
+    public Card getPlayerCard(){
+        return warDeck.get(0);
+    }
+    public Card getComputerCard(){
+        return warDeck.get(1);
+    }
+    public ArrayList<Card> getPlayerDeck(){
+        return playerDeck;
+    }
+    public ArrayList<Card> getComputerDeck() {
+        return computerDeck;
+    }
+    public ArrayList<Card> getWarDeck() {
+        return warDeck;
+    }
+
     public Deck(){
         for (int i = 0; i < 4; i++) {
             for (int j = 0; j < 13; j++) {
@@ -14,7 +30,6 @@ public class Deck {
             }
         }
     }
-
     public void shuffle(){
 
         for (int i = 0; i < 52; i++) {
@@ -30,25 +45,6 @@ public class Deck {
 
     }
 
-    // player card
-    // compuet card
-    // player deck
-    // computer deckl
-
-    public Card getPlayerCard(){
-        return warDeck.get(0);
-    }
-    public Card getComputerCard(){
-        return warDeck.get(1);
-    }
-    public ArrayList<Card> getPlayerDeck(){
-        return playerDeck;
-    }
-
-    public ArrayList<Card> getComputerDeck() {
-        return computerDeck;
-    }
-
     public void split(){
         for (int i = 0; i < 26; i++) {
             //System.out.println(i);
@@ -62,7 +58,6 @@ public class Deck {
         }
         allDeck.clear(); // java jank lmao
     }
-
 
     public void battle(){
         warDeck.add(playerDeck.get(1));
@@ -87,38 +82,12 @@ public class Deck {
 
         if(warDeck.get(0).getPoint() == warDeck.get(1).getPoint()){
             playerDeck.add(warDeck.get(0));
-            playerDeck.add(warDeck.get(1));
+            computerDeck.add(warDeck.get(1));
             System.out.println("tie");
         }
 
         warDeck.clear();
     }
-    
-    public ArrayList<Card> getWarDeck() {
-        return warDeck;
-    }
-
-//        public void war(){
-//        for (int i = 0; i < 4; i++) {
-//            warDeck.add(playerDeck.get(i));
-//            playerDeck.remove(i);
-//            warDeck.add(computerDeck.get(i));
-//            computerDeck.remove(i);
-//        }
-//        if(warDeck.get(0).getPoint() < warDeck.get(1).getPoint()){
-//            computerDeck.add(warDeck.get(0));
-//            computerDeck.add(warDeck.get(1));
-//            System.out.println("HAHA YOU LOST YOU SUCK HEHEHHW");
-//        }
-//
-//        if(warDeck.get(0).getPoint() > warDeck.get(1).getPoint()){
-//            playerDeck.add(warDeck.get(0));
-//            playerDeck.add(warDeck.get(1));
-//            System.out.println("PLAYER WON LAMOIA");
-//        }
-//
-//    }
-
 
     public String toString() {
         String temp1 = "";

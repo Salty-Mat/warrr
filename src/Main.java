@@ -5,38 +5,45 @@ public class Main {
     public static void main(String[] args) {
         Deck deck = new Deck();
 
-        play(deck);
-
-
-
-
-
-
-
-        //System.out.println(deck.toString());
-
-
-    }
-    public static void play(Deck newDeck ){
         Scanner scanner = new Scanner(System.in);
 
-        newDeck.shuffle();
+        boolean inGame = true;
 
-        newDeck.split();
+        deck.shuffle();
 
-        newDeck.battle();
+        deck.split();
 
-        System.out.println( "      | " + newDeck.getPlayerCard() + " | VS | "+ newDeck.getComputerCard()+ " |" );
-        newDeck.realBattle();
-        System.out.println(" ");
-        System.out.println("your cards remaining: " + newDeck.getPlayerDeck().size()+"               "+ "computer cards reminng: "+ newDeck.getComputerDeck().size());
+//        for (int i = 0; i < 50; i++) {
+//            deck.battle();
+//
+//            System.out.println( "      | " + deck.getPlayerCard() + " | VS | "+ deck.getComputerCard()+ " |" );
+//            deck.realBattle();
+//            System.out.println(" ");
+//            System.out.println("your cards remaining: " + deck.getPlayerDeck().size()+"               "+ "computer cards reminng: "+ deck.getComputerDeck().size());
+//
+//            System.out.println(deck.toString());
+//
+//            if (deck.getPlayerDeck().size() == 0 || deck.getComputerDeck().size() == 0){
+//                inGame = false;
+//            }
+//        }
 
-        String str = scanner.nextLine();
-        if(newDeck.getPlayerDeck().size() == 0){
-            return;
+
+        while (inGame){
+
+            deck.battle();
+
+            System.out.println( "      | " + deck.getPlayerCard() + " | VS | "+ deck.getComputerCard()+ " |" );
+            deck.realBattle();
+            System.out.println(" ");
+            System.out.println("your cards remaining: " + deck.getPlayerDeck().size()+"               "+ "computer cards reminng: "+ deck.getComputerDeck().size());
+
+            System.out.println(deck.toString());
+
+            if (deck.getPlayerDeck().size() == 0 || deck.getComputerDeck().size() == 0){
+                inGame = false;
+            }
         }
-        play(newDeck);
-
 
     }
 }
