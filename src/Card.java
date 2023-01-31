@@ -41,13 +41,14 @@ public class Card {
         isPlayer = player;
         val = values.charAt(v);
         suit = suits.charAt(s);
-        if(v < 8){
-            point = v + 2;
-        } else if (v == 12) {   //ACE
-            point = 1;
-        } else {
-            point = 10;     //FACES & 10
-        }
+        point = v;
+//        if(v < 8){
+//            point = v;
+//        } else if (v == 11) {   //ACE
+//            point = 1;
+//        } else {
+//            point = 10;     //FACES & 10
+//        }
     }
 
     public void setPlayer(boolean player) {

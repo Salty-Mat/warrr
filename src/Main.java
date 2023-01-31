@@ -13,7 +13,7 @@ public class Main {
 
         deck.split();
 
-//        for (int i = 0; i < 50; i++) {
+//        for (int i = 0; i < 3; i++) {
 //            deck.battle();
 //
 //            System.out.println( "      | " + deck.getPlayerCard() + " | VS | "+ deck.getComputerCard()+ " |" );

@@ -26,13 +26,13 @@ public class Deck {
     public Deck(){
         for (int i = 0; i < 4; i++) {
             for (int j = 0; j < 13; j++) {
-                allDeck.add(new Card(i,j));
+                allDeck.add(new Card(i,j,false));
             }
         }
     }
     public void shuffle(){
 
-        for (int i = 0; i < 52; i++) {
+        for (int i = 0; i < 200; i++) {
             int rand = (int) (Math.random()*52); //randomizing
             Card temp;
             temp = allDeck.get(rand); //  putting card into hand
@@ -60,33 +60,80 @@ public class Deck {
     }
 
     public void battle(){
-        warDeck.add(playerDeck.get(1));
-        playerDeck.remove(1);
-        warDeck.add(computerDeck.get(1));
-        computerDeck.remove(1);
+        warDeck.add(playerDeck.get(0));
+        playerDeck.remove(0);
+        warDeck.add(computerDeck.get(0));
+        computerDeck.remove(0);
 
     }
     
     public void realBattle(){
         if(warDeck.get(0).getPoint() < warDeck.get(1).getPoint()){
-            computerDeck.add(warDeck.get(0));
-            computerDeck.add(warDeck.get(1));
+            if((int)(Math.random()*2) == 1){
+                computerDeck.add(warDeck.get(1));
+                computerDeck.add(warDeck.get(0));
+            } else {
+                computerDeck.add(warDeck.get(0));
+                computerDeck.add(warDeck.get(1));
+            }
+
             System.out.println("HAHA YOU LOST YOU SUCK HEHEHHW");
         }
 
         if(warDeck.get(0).getPoint() > warDeck.get(1).getPoint()){
-            playerDeck.add(warDeck.get(0));
-            playerDeck.add(warDeck.get(1));
+            if((int)(Math.random()*2) == 1){
+                playerDeck.add(warDeck.get(1));
+                playerDeck.add(warDeck.get(0));
+            } else {
+                playerDeck.add(warDeck.get(0));
+                playerDeck.add(warDeck.get(1));
+            }
             System.out.println("PLAYER WON LAMOIA");
         }
 
         if(warDeck.get(0).getPoint() == warDeck.get(1).getPoint()){
-            playerDeck.add(warDeck.get(0));
-            computerDeck.add(warDeck.get(1));
+            war();
             System.out.println("tie");
         }
 
         warDeck.clear();
+    }
+
+    public void war(){
+
+        System.out.println("hahwar");
+
+        for (int i = 0; i < 4; i++) {
+            if (playerDeck.size() == 0){
+                break;
+            }
+            System.out.println("bruh");
+            warDeck.add(playerDeck.get((0)));
+            playerDeck.remove(0);
+            //--;
+
+        }
+        for (int i = 0; i < 4; i++) {
+            if (computerDeck.size() == 0){
+                break;
+            }
+            System.out.println("jdsfjis");
+            warDeck.add(computerDeck.get((0)));
+            computerDeck.remove(0);
+            //i--;
+        }
+        System.out.println("1111111111");
+        if (warDeck.get(warDeck.size()-2 ).getPoint() < warDeck.get(warDeck.size()-1).getPoint()){
+            System.out.println("AYYYYYYYYYYYYYO");
+            for (int i = 0; i < warDeck.size(); i++) {
+                computerDeck.add(warDeck.get(i));
+            }
+        } else if (warDeck.get(warDeck.size()-2 ).getPoint() > warDeck.get(warDeck.size()-1).getPoint()){
+            System.out.println("2222222222222222222222222222");
+            for (int i = 0; i < warDeck.size(); i++) {
+                playerDeck.add(warDeck.get(i));
+            }
+        }
     }
 
     public String toString() {
