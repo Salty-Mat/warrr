@@ -41,7 +41,12 @@ public class Main {
             System.out.println(deck.toString());
 
             if (deck.getPlayerDeck().size() == 0 || deck.getComputerDeck().size() == 0){
-                inGame = false;
+                scanner.nextLine();
+                deck = new Deck();
+                deck.shuffle();
+
+                deck.split();
+                //inGame = false;
             }
         }
 
