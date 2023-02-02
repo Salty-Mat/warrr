@@ -77,7 +77,7 @@ public class Deck {
                 computerDeck.add(warDeck.get(1));
             }
 
-            //System.out.println("HAHA YOU LOST YOU SUCK HEHEHHW");
+            System.out.println("HAHA YOU LOST YOU SUCK HEHEHHW");
         }
 
         if(warDeck.get(0).getPoint() > warDeck.get(1).getPoint()){
@@ -88,7 +88,7 @@ public class Deck {
                 playerDeck.add(warDeck.get(0));
                 playerDeck.add(warDeck.get(1));
             }
-            //System.out.println("PLAYER WON LAMOIA");
+            System.out.println("PLAYER WON LAMOIA");
         }
 
         if(warDeck.get(0).getPoint() == warDeck.get(1).getPoint()){

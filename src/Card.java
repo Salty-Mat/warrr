@@ -1,6 +1,6 @@
 public class Card {
     public static String values = "23456789TJQKA";
-    public static String suits = "♣⬩♥♠";
+    public static String suits = "♣♦♥♠";
     private boolean isPlayer = false;
 
     private char suit;
@@ -60,7 +60,7 @@ public class Card {
     }
 
     public String toString(){
-        return "" + val + suit;
+        return "" + val +"|"+ suit;
     }
     
     public int randomInt(int lower, int higher){
