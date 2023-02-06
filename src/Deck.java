@@ -67,7 +67,7 @@ public class Deck {
 
     }
     
-    public void realBattle(){
+    public int realBattle(){
         if(warDeck.get(0).getPoint() < warDeck.get(1).getPoint()){
             if((int)(Math.random()*2) == 1){ // random
                 computerDeck.add(warDeck.get(1));
@@ -77,7 +77,9 @@ public class Deck {
                 computerDeck.add(warDeck.get(1));
             }
 
-            System.out.println("HAHA YOU LOST YOU SUCK HEHEHHW");
+            //System.out.println("HAHA YOU LOST YOU SUCK HEHEHHW");
+            warDeck.clear();
+            return 0;
         }
 
         if(warDeck.get(0).getPoint() > warDeck.get(1).getPoint()){
@@ -88,15 +90,20 @@ public class Deck {
                 playerDeck.add(warDeck.get(0));
                 playerDeck.add(warDeck.get(1));
             }
-            System.out.println("PLAYER WON LAMOIA");
+            //System.out.println("PLAYER WON LAMOIA");
+            warDeck.clear();
+            return 1;
         }
 
         if(warDeck.get(0).getPoint() == warDeck.get(1).getPoint()){
             war();
-            System.out.println("tie");
+            //System.out.println("tie");
+            warDeck.clear();
+            return 2;
         }
 
         warDeck.clear();
+        return -1;
     }
 
     public void china(){
