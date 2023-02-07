@@ -24,25 +24,6 @@ public class Main {
 
         while (inGame){
 
-
-
-
-            System.out.println("           < PLAYER >          < CPU >  ");
-//            System.out.println("            ? ——— ?            ? ——— ? ");
-//            System.out.println("            |  ?  |            |  ?  | ");
-//            System.out.println("            ? ——— ?            ? ——— ? \n");
-
-
-
-//            System.out.println("\n...........Press Enter to flip card...........");
-//            scanner.nextLine();
-
-            try {
-                Thread.sleep(50);
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
-            }
-
             deck.battle();
             Picon = deck.getPlayerCard().toString().charAt(2);
             Pnum = deck.getPlayerCard().toString().charAt(0);
@@ -53,17 +34,15 @@ public class Main {
             Cboth = deck.getComputerCard().toString();
 
 
+
+            System.out.println("           < PLAYER >          < CPU >  ");
             System.out.println("            "+Picon+" ——— "+Pnum+"            "+Cicon+" ——— "+Cnum+" ");
             System.out.println("            | "+ Pboth +" |  // VS //  | "+Cboth+" | ");
             System.out.println("            "+Pnum+" ——— "+Picon+"            "+Cnum+" ——— "+Cicon+"\n");
 
             System.out.println("                   --------------           \n");
 
-            try {
-                Thread.sleep(500);
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
-            }
+
 
 
 
@@ -85,27 +64,23 @@ public class Main {
 
             System.out.println("\n    Player cards: "+ deck.getPlayerDeck().size()+ "   computer cards: "+ deck.getComputerDeck().size() +"\n");
 
-            System.out.println("------------------------------------------------");
-
-
-
-//            System.out.println("\n         Press Enter clear table");
-//            scanner.nextLine();
-
-            try {
-                Thread.sleep(500);
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
-            }
 
 
 
 
-
+            System.out.println("------------------Press Enter clear table------------------");
+            scanner.nextLine();
 
             if (deck.getPlayerDeck().size() == 0 || deck.getComputerDeck().size() == 0){
                 inGame = false;
             }
+
+            //            try {
+//                Thread.sleep(500);
+//            } catch (InterruptedException e) {
+//                throw new RuntimeException(e);
+//            }
+
 
         }
 
