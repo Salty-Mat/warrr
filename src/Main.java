@@ -71,7 +71,11 @@ public class Main {
             System.out.println("------------------Press Enter clear table------------------");
             scanner.nextLine();
 
-            if (deck.getPlayerDeck().size() == 0 || deck.getComputerDeck().size() == 0){
+            if (deck.getPlayerDeck().size() == 0 ){
+                System.out.println("         - COMPUTER WON -");
+                inGame = false;
+            } else if (deck.getComputerDeck().size() == 1) {
+                System.out.println("         - PLAYER WON -");
                 inGame = false;
             }
 

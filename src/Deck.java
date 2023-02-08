@@ -123,7 +123,7 @@ public class Deck {
                 break;
             }
             //System.out.println("jdsfjis");
-            warDeck.add(computerDeck.get((0)));
+            warDeck.add(computerDeck.get(0));
             computerDeck.remove(0);
             //i--;
         }
