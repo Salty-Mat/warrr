@@ -60,6 +60,11 @@ public class Deck {
     }
 
     public void battle(){
+        if (computerDeck.size() == 0 || playerDeck.size() == 0){
+                return;
+            }
+
+
         warDeck.add(playerDeck.get(0));
         playerDeck.remove(0);
         warDeck.add(computerDeck.get(0));
@@ -133,20 +138,34 @@ public class Deck {
 
         //System.out.println("hahwar");
         while (warDeck.get(warDeck.size()-2 ).getPoint() == warDeck.get(warDeck.size()-1).getPoint()) {
+
+//            if (computerDeck.size() == 0 || playerDeck.size() == 0){
+//                break;
+//            }
             china();
         }
+
+
 
 
 //        System.out.println("1111111111");
         if (warDeck.get(warDeck.size()-2 ).getPoint() < warDeck.get(warDeck.size()-1).getPoint()){
             //System.out.println("AYYYYYYYYYYYYYO");
             for (int i = 0; i < warDeck.size(); i++) {
+                if (computerDeck.size() == 0 ){
+                    break;
+                }
                 computerDeck.add(warDeck.get(i));
+
             }
         } else if (warDeck.get(warDeck.size()-2 ).getPoint() > warDeck.get(warDeck.size()-1).getPoint()){
             //System.out.println("2222222222222222222222222222");
             for (int i = 0; i < warDeck.size(); i++) {
+                if (playerDeck.size() == 0){
+                    break;
+                }
                 playerDeck.add(warDeck.get(i));
+
             }
 
         }

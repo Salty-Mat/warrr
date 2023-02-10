@@ -27,6 +27,7 @@ public class Main {
         while (inGame) {
 
             deck.battle();
+
             Picon = deck.getPlayerCard().toString().charAt(2);
             Pnum = deck.getPlayerCard().toString().charAt(0);
             Pboth = deck.getPlayerCard().toString();
@@ -35,13 +36,13 @@ public class Main {
             Cnum = deck.getComputerCard().toString().charAt(0);
             Cboth = deck.getComputerCard().toString();
 
-            System.out.println("           < PLAYER >          < CPU >  \n" + "            " + Picon + " ——— " + Pnum + "            " + Cicon + " ——— " + Cnum + " \n"+"            | " + Pboth + " |  // VS //  | " + Cboth + " | \n "+"           " + Pnum + " ——— " + Picon + "            " + Cnum + " ——— " + Cicon + "\n");
+            System.out.println("           < PLAYER >          < CPU >  \n" + "            " + Picon + " ——— " + Pnum + "            " + Cicon + " ——— " + Cnum + " \n"+"            | " + Pboth + " |  // VS //  | " + Cboth + " | \n "+"           " + Pnum + " ——— " + Picon + "            " + Cnum + " ——— " + Cicon + "\n"+ "                   --------------           \n");
            // System.out.println("           < PLAYER >          < CPU >  ");
            //System.out.println("            " + Picon + " ——— " + Pnum + "            " + Cicon + " ——— " + Cnum + " ");
             //System.out.println("            | " + Pboth + " |  // VS //  | " + Cboth + " | ");
             //System.out.println("            " + Pnum + " ——— " + Picon + "            " + Cnum + " ——— " + Cicon + "\n");
 
-            System.out.println("                   --------------           \n");
+            //System.out.println("                   --------------           \n");
 
 
             int winner = deck.realBattle();
@@ -88,13 +89,12 @@ public class Main {
                 }
             }
 
-            clearScreen();
 
 
             if (deck.getPlayerDeck().size() == 0) {
                 System.out.println("            🎉🎉  - COMPUTER WON - 🎉🎉");
                 inGame = false;
-            } else if (deck.getComputerDeck().size() == 1) {
+            } else if (deck.getComputerDeck().size() == 0) {
                 System.out.println("                🎉🎉  - PLAYER WON - 🎉🎉");
                 inGame = false;
             }
@@ -111,8 +111,4 @@ public class Main {
     }
 
 
-    public static void clearScreen() {
-        System.out.print("\033[H\033[2J");
-        System.out.flush();
-    }
 }
